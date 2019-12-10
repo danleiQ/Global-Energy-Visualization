@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        //load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawAllSheets);
+        //google.charts.setOnLoadCallback(drawChart1);
+
+        function drawAllSheets() {
+            drawSheetName('Total_production', 'SELECT A,B,C,D,E,F',
+                    TotalproductionResponseHandler);
+            drawSheetName('Total_production_everyfiveyear', 'SELECT A,B,C,D,E,F',
+                    TotalproductionfiveyearResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    CoalContinentResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    OilContinentResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    GasContinentResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    NuclearContinentResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    HydroContinentResponseHandler);
+        } //drawAllSheets
+
+        function drawSheetName(sheetName, query, responseHandler) {
+            var queryString = encodeURIComponent(query);
+            var query = new google.visualization.Query(
+                    'https://docs.google.com/spreadsheets/d/1Ywv8f5Mmz0gGvLe5_Lio5MJC__19Ny3-ZdYliWOXXeg/gviz/tq?sheet=' + sheetName + '&headers=1&tq=' +queryString
+            );
+
+            query.send(responseHandler);
+        }
+        function TotalproductionResponseHandler(response) {
+
+            var data = response.getDataTable();
+            var options = {
+
+                title: 'Total Energy Production over 1965-2016',
+                chartArea:{left:200,width:'100%',right:200},
+                //curveType: 'function',
+                legend: { position: 'right' }};
+
+            var chart = new google.visualization.LineChart(document.getElementById('Totalproduction_div'));
+            chart.draw(data, options);
+
+        }//draw line charts
+
+
+
+        function TotalproductionfiveyearResponseHandler(response) {
+            var data = response.getDataTable();
+
+            var options = {
+                width: 600,
+                height: 600,
+                legend: { position: 'top', maxLines: 3 },
+                bar: { groupWidth: '75%' },
+                isStacked: true,
+                colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+                vAxis: {title: 'Country'},
+                hAxis: {title: 'Percent of Health Care Spending Per GDP Per Person($ in Billions)'}
+            };
+            var chart = new google.charts.Bar(document.getElementById('Productionfiveyear_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }//draw stacked bar charts
+
+        function CoalContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Coal Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('CoalContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Coal stacked area charts
+
+        function OilContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Oil Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('OilContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Oil stacked area charts
+        function GasContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Natural Gas Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('GasContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Gas stacked area charts
+        function NuclearContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Nuclear Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('NuclearContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Nuclear stacked area charts
+        function HydroContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Hydroelectricity Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('HydroContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Hydro stacked area charts
+        google.charts.setOnLoadCallback(drawPieChart1);
+        google.charts.setOnLoadCallback(drawPieChart2);
+        google.charts.setOnLoadCallback(drawPieChart3);
+        google.charts.setOnLoadCallback(drawPieChart4);
+        google.charts.setOnLoadCallback(drawPieChart5);
+        function drawPieChart1() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['China',  114.00], ['Germany',  161.00],
+                ['India',  35.50], ['Japan',  48.70],
+                ['United States',  292.00],
+                ['South Africa',  24.70]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['China',   1910.00], ['Germany',  78.5],
+                ['India',   397.00], ['Japan',   120.00],
+                ['United States',  392.00],
+                ['South Africa',   83.40]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Coal Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_coal'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+
+
+
+        //Piechart
+        function drawPieChart2() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Oil Consumption'],
+                ['China',  114.00], ['Germany',  161.00],
+                ['India',  35.50], ['Japan',  48.70],
+                ['United States',  292.00],
+                ['South Africa',  24.70]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Oil Consumption'],
+                ['China',   1910.00], ['Germany',  78.5],
+                ['India',   397.00], ['Japan',   120.00],
+                ['United States',  392.00],
+                ['South Africa',   83.40]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Oil Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_oil'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+        function drawPieChart3() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Natural Gas Consumption'],
+                ['China',  114.00], ['Germany',  161.00],
+                ['India',  35.50], ['Japan',  48.70],
+                ['United States',  292.00],
+                ['South Africa',  24.70]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Natural Gas Consumption'],
+                ['China',   1910.00], ['Germany',  78.5],
+                ['India',   397.00], ['Japan',   120.00],
+                ['United States',  392.00],
+                ['South Africa',   83.40]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Natural Gas Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_gas'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+        function drawPieChart4() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Nuclear Consumption'],
+                ['China',  114.00], ['Germany',  161.00],
+                ['India',  35.50], ['Japan',  48.70],
+                ['United States',  292.00],
+                ['South Africa',  24.70]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Nuclear Consumption'],
+                ['China',   1910.00], ['Germany',  78.5],
+                ['India',   397.00], ['Japan',   120.00],
+                ['United States',  392.00],
+                ['South Africa',   83.40]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Nuclear Energy Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_nuclear'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+        function drawPieChart5() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Hydroelectricity Consumption'],
+                ['China',  114.00], ['Germany',  161.00],
+                ['India',  35.50], ['Japan',  48.70],
+                ['United States',  292.00],
+                ['South Africa',  24.70]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Hydroelectricity Consumption'],
+                ['China',   1910.00], ['Germany',  78.5],
+                ['India',   397.00], ['Japan',   120.00],
+                ['United States',  392.00],
+                ['South Africa',   83.40]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Hydroelectricity Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_hydro'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+
+    </script>
+</head>
+<body>
+
+<td><div id="piechart_gas" style="width: 500px;height: 300px;border: 1px"></div></td>
+
+</body>
+</html>
