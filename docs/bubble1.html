@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <title>Gapminder Clone</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- jQuery UI CSS -->
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+	<!-- D3 Tooltip CSS -->
+	<link rel="stylesheet" href="css/d3-tip.css">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h4>total</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <button id="play-button2" class="btn btn-primary">Play</button>
+                <button id="reset-button2" class="btn btn-primary">Reset</button>
+                <div id="slider-div2">
+                    <label>Year: <span id="year2">1965</span></label>
+                    <div id="date-slider2"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <select id="continent-select2" class="form-control">
+                    <option selected="selected" value="all">All</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="North America">North America</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="South America">South America</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+                <div id="chart-area2"></div>
+            </div>
+        </div>
+    </div>
+
+     Bootstrap grid setup
+    <div class="container" style="margin-top: 50px;">
+        <h4>person</h4>
+		<div class="row">
+			<div class="col-md-6">
+				<button id="play-button" class="btn btn-primary">Play</button>
+				<button id="reset-button" class="btn btn-primary">Reset</button>
+				<div id="slider-div">
+					<label>Year: <span id="year">1965</span></label>
+					<div id="date-slider"></div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<select id="continent-select" class="form-control">
+					<option selected="selected" value="all">All</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Asia">Asia</option>
+					<option value="Europe">Europe</option>
+					<option value="North America">North America</option>
+                    <option value="Oceania">Oceania</option>
+                    <option value="South America">South America</option>
+				</select>
+			</div>
+		</div>
+	
+        <div class="row">
+			<div class="col-md-12">
+				<div id="chart-area"></div>
+			</div>
+        </div>
+    </div>
+
+<!-- External JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3-tip.js"></script>
+<!-- Custom JS -->
+<!-- <script src="js/main_source.js"></script> -->
+<script src="js/person.js"></script>
+<script src="js/total.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

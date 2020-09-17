@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/mycss.css">
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/134484/46721/5de79251f629d80e78161846.css' rel='stylesheet' type='text/css' />
+    <title>Energy Production</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+            //load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawAllSheets);
+        //google.charts.setOnLoadCallback(drawChart1);
+
+        function drawAllSheets() {
+            drawSheetName('Total_production', 'SELECT A,B,C,D,E,F',
+                    TotalproductionResponseHandler);
+            drawSheetName('Total_production_everyfiveyear', 'SELECT A,B,C,D,E,F',
+                    TotalproductionfiveyearResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    CoalContinentResponseHandler);
+            drawSheetName('Oil_Continent', 'SELECT A,B,C,D,E,F,G',
+                    OilContinentResponseHandler);
+            drawSheetName('Gas_Continent', 'SELECT A,B,C,D,E,F,G',
+                    GasContinentResponseHandler);
+            drawSheetName('Nuclear_Continent', 'SELECT A,B,C,D,E,F,G',
+                    NuclearContinentResponseHandler);
+            drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+                    HydroContinentResponseHandler);
+        } //drawAllSheets
+
+        function drawSheetName(sheetName, query, responseHandler) {
+            var queryString = encodeURIComponent(query);
+            var query = new google.visualization.Query(
+                    'https://docs.google.com/spreadsheets/d/1Ywv8f5Mmz0gGvLe5_Lio5MJC__19Ny3-ZdYliWOXXeg/gviz/tq?sheet=' + sheetName + '&headers=1&tq=' +queryString
+            );
+
+            query.send(responseHandler);
+        }
+        function TotalproductionResponseHandler(response) {
+
+            var data = response.getDataTable();
+            var options = {
+
+                title: 'Total Energy Production over 1965-2016',
+                chartArea:{left:200,width:'100%',right:200},
+                //curveType: 'function',
+                legend: { position: 'right' }};
+
+            var chart = new google.visualization.LineChart(document.getElementById('Totalproduction_div'));
+            chart.draw(data, options);
+
+        }//draw line charts
+
+
+
+        function TotalproductionfiveyearResponseHandler(response) {
+            var data = response.getDataTable();
+
+            var options = {
+                width: 600,
+                height: 600,
+                legend: { position: 'top', maxLines: 3 },
+                bar: { groupWidth: '75%' },
+                isStacked: true,
+                colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+                vAxis: {title: 'Country'},
+                hAxis: {title: 'Energy Projuction($ in Billions)'}
+            };
+            var chart = new google.charts.Bar(document.getElementById('Productionfiveyear_div'));
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+        }//draw stacked bar charts
+
+        function CoalContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Coal Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('CoalContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Coal stacked area charts
+
+        function OilContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Oil Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('OilContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Oil stacked area charts
+        function GasContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Natural Gas Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('GasContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Gas stacked area charts
+        function NuclearContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Nuclear Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('NuclearContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Nuclear stacked area charts
+        function HydroContinentResponseHandler(response) {
+            var data =response.getDataTable();
+
+            var options = {
+                title: 'Hydroelectricity Production',
+                isStacked: 'true',
+                hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            var chart = new google.visualization.AreaChart(document.getElementById('HydroContinentResponseHandler_div'));
+            chart.draw(data, options);
+        }//Hydro stacked area charts
+        google.charts.setOnLoadCallback(drawPieChart1);
+        google.charts.setOnLoadCallback(drawPieChart2);
+        google.charts.setOnLoadCallback(drawPieChart3);
+        google.charts.setOnLoadCallback(drawPieChart4);
+        google.charts.setOnLoadCallback(drawPieChart5);
+    function drawPieChart1() {
+        var olddata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Coal Production'],
+                      ['Australia',  67.8], ['Colombia',  2.75],
+                      ['India',  63.78], ['Indonesia',  0.24],
+                      ['Russian',  null],
+                      ['South Africa',  74.86]]);
+        var newdata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Coal Production'],
+                      ['Australia',  250.63], ['Colombia',  51.07],
+                      ['India',  252.35], ['Indonesia',  162.14],
+                      ['Russian', 150.95],
+                      ['South Africa',  144.10]]);
+
+        var options = { pieSliceText: 'None',
+                        title: 'Six Countries with Top Coal Production 1965 vs 2015(million)'};
+
+
+        var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_coal'));
+
+        var diffData = chartDiff.computeDiff(olddata, newdata);
+        chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+      }
+
+
+
+     //Piechart
+    function drawPieChart2() {
+        var olddata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Oil Production'],
+                      ['United Arab Emirates',  74.09], ['China', 101.22],
+                      ['Canada',  75.36], ['Mexico',  128],
+                      ['Saudi Arabia',  506.35],
+                      ['Russian',  null]]);
+        var newdata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Oil Production'],
+                      ['United Arab Emirates',  135.21], ['China', 203.01],
+                      ['Canada', 160.29], ['Mexico',  45.6],
+                      ['Saudi Arabia', 63.3],
+                      ['Russian', 512.32]]);
+
+        var options = { pieSliceText: 'none',
+                        
+                        title: 'Six Countries with Top Oil Production 1980 vs 2010(million)'};
+
+
+        var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_oil'));
+
+        var diffData = chartDiff.computeDiff(olddata, newdata);
+        chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+      }
+    function drawPieChart3() {
+        var olddata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Natural Gas Production'],
+                      ['China',   12.37], ['Norway',  21.41],
+                      ['Canada',  61.25], ['Qatar',  1.57],
+                      ['Russian',  null],
+                      ['Saudi Arabia',  7.94]]);
+        var newdata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Natural Gas Production'],
+                      ['China',  83.01], ['Norway',  91.53],
+                      ['Canada',  128.63], ['Qatar',  105.87],
+                      ['Russian',  514.52],
+                      ['Saudi Arabia',  71.61]]);
+
+        var options = { pieSliceText: 'none',
+                        title: 'Six Countries with Top Natural Gas Production 1980 vs 2010(million)'};
+
+
+        var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_gas'));
+
+        var diffData = chartDiff.computeDiff(olddata, newdata);
+        chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+      }
+    function drawPieChart4() {
+        var olddata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Nuclear Production'],
+                      ['Japan',  7.10], ['Germany',  4.78],
+                      ['France',  5.27], ['United States', 22.90],
+                      ['Canada',  3.27], ['Ukraine', null]]);
+        var newdata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Nuclear Production'],
+                      ['Japan',  24.80], ['Germany',  12.10],
+                      ['France',  36.90], ['United States',  72.10],
+                      ['Canada',  7.80],
+                      ['Ukraine',  7.67]]);
+
+        var options = { pieSliceText: 'none',
+                        title: 'Six Countries with Top Nuclear Energy Production 1980 vs 2010(million)'};
+
+
+        var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_nuclear'));
+
+        var diffData = chartDiff.computeDiff(olddata, newdata);
+        chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+      }
+    function drawPieChart5() {
+        var olddata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Hydroelectricity Production'],
+                      ['China',  5.01], ['Canada',  21.60],
+                      ['India',  4.00], ['Brazil',  11.10],
+                      ['Norway',  7.19],
+                      ['United States',  24.00]]);
+        var newdata = google.visualization.arrayToDataTable([
+                     ['Country Name', 'Hydroelectricity Production'],
+                      ['China',  62.10], ['Canada',  30.20],
+                      ['India',  9.84], ['Brazil',  34.70],
+                      ['Norway',  10.10],
+                      ['United States',  22.6]]);
+        var options = { pieSliceText: 'none',
+                        title: 'Six Countries with Top Hydroelectricity Production 1980 vs 2010(million)'};
+
+
+        var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_hydro'));
+
+        var diffData = chartDiff.computeDiff(olddata, newdata);
+        chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+      }
+    </script>
+</head>
+<body>
+<div class="top-area slideInUp">back to top︎</div>
+<header>
+    <div class="banner">
+        <div class="ban_con">
+            <h1 class="title">Energy Production and Consumption</h1>
+            <div ><img  class="logo" src="img/Title-logo.jpg" alt=""/></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<nav class="nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a  href="page2.html">Energy Consumption</a></li>
+        <li><a   style="color: #6fabff;" href="page3.html">Energy Production</a></li>
+        <li><a href="page4.html">CO2 Emission</a></li>
+    </ul>
+</nav>
+<div class="content">
+    <section>
+        <div class="item">
+            <h1>Energy Production</h1>
+            <div class="line"></div>
+            <div class="intro_con">
+                <div class="line"></div>
+                <div class="Bar">
+                    <div id="Productionfiveyear_div" style="width: 100%; height: 500px"></div>
+                </div>
+                <div class="txt">
+                    <div>
+
+                        <p>
+                            Similar to the development trend of energy consumption, energy production is also increasing year by year. Fossil energy still remains the focus of development, while new energy development is growing slowly.
+                        </p>
+
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div >
+                    <iframe src="Energy%20Production.html" frameborder="0" name="mainFrame3" style="border: 0px;width: 100%;height: 500px"marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                </div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="item">
+            <h1>Top consumption Countries</h1>
+            <div class="line"></div>
+            <div class="intro_con">
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn">&nbsp;Coal&nbsp;</button>
+                    <div class="dropdown-content">
+                        <a href="coalzhe.html" target="mainFrame" onclick="change('coal')">Coal</a>
+                        <a href="oilzhe.html" target="mainFrame" onclick="change('oil')">Oil</a>
+                        <a href="gaszhe.html" target="mainFrame"onclick="change('Natural Gas')">Natural Gas</a>
+                        <a href="energyzhe.html" target="mainFrame" onclick="change('Nuclear Energy')">Nuclear Energy</a>
+                        <a href="hydrozhe.html" target="mainFrame" onclick="change('Hydroelectricity')">Hydroelectricity</a>
+                    </div>
+                </div>
+                <div class="circle">
+                    <iframe id="mainFrame" class="incir2" name="mainFrame" style="border: 0px;" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"src="coalzhe.html">
+                    </iframe>
+                </div>
+                <div class="clear"></div>
+
+
+            </div>
+            <div class="clear"></div>
+            <div class="intro_con">
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn2">&nbsp;Coal&nbsp;</button>
+                    <div class="dropdown-content">
+                        <a href="coalcir.html" target="mainFrame2" onclick="change('coal')">Coal</a>
+                        <a href="oilcir.html" target="mainFrame2" onclick="change('oil')">Oil</a>
+                        <a href="gascir.html" target="mainFrame2"onclick="change('Natural Gas')">Natural Gas</a>
+                        <a href="enerycir.html" target="mainFrame2" onclick="change('Nuclear Energy')">Nuclear Energy</a>
+                        <a href="hydrocir.html" target="mainFrame2" onclick="change('Hydroelectricity')">Hydroelectricity</a>
+                    </div>
+                </div>
+                <div class="circle">
+                    <iframe id="mainFrame2" class="incir" name="mainFrame2" style="border: 0px;" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"src="coalcir.html">
+                    </iframe>
+                </div>
+                <div class="clear"></div>
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+<div class="foot">
+    <div class="infoot">
+        <p>DATS6401 Final Project by Danlei Qian@2019</p>
+    </div>
+</div>
+</body>
+<script>
+    function change(e){
+        console.log(e)
+        document.getElementById("dropbtn").innerHTML=e;
+    }
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="./js/myjs.js"></script>
+
+</html>
