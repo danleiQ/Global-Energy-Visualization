@@ -8,4 +8,4 @@ https://www.gapminder.org/data/
 https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html
 
 And here is the  publishing link to github.io:
-https://danleiq.github.io/DATS-6401-Final-Project/docs(open%20the%20index.html)/index.html
+https://danleiq.github.io/Global-Energy-Visualization/docs(open%20the%20index.html)/index.html
