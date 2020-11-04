@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/mycss.css">
+    <script src="./js/myjs.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link href='http://cdn.repository.webfont.com/webfonts/nomal/134484/46721/5de79251f629d80e78161846.css' rel='stylesheet' type='text/css' />
+    <title>Energy Consumption</title>
+</head>
+<body>
+<div class="top-area slideInUp"  id="to_top">back to top︎</div>
+<header>
+    <div class="banner">
+        <div class="ban_con">
+            <h1 class="title">Energy Production and Consumption</h1>
+            <div ><img  class="logo" src="img/Title-logo.jpg" alt=""/></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<nav class="nav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a  style="color: #6fabff;" href="page2.html">Energy Consumption</a></li>
+        <li><a  href="page3.html">Energy Production</a></li>
+        <li><a href="page4.html">CO2 Emission</a></li>
+    </ul>
+</nav>
+<div class="content">
+    <section>
+        <div class="item">
+            <h1>Energy Consumption Problem</h1>
+            <div class="line"></div>
+            <div class="intro_con">
+                <div class="line"></div>
+                <div class="Bar">
+                    <svg  width="700" height="375"></svg>
+                </div>
+                <div class="txt">
+
+                    <p>
+                        As we can see from the Dynamic bar chart, the consumption of all types of energy continues to increase. The three fossil energy sources have consistently ranked in the top three. Oil consumption has been ranked first in energy consumption until 2010, and Coal consumption has replaced it after 2010. And the line chart below can give a more intuitive show of increasing trend. (Information about coal consumption in this dataset before 1980 is missing)                    </p>
+                </div>
+                <div class="google">
+                    <iframe src="charts/page2/Energy_Consumption.html" frameborder="0" name="mainFrame3" style="border: 0px;width: 1000px;height: 700px"marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+<div class="line"></div>
+        </div>
+        <div class="item">
+            <h1>Top consumption Countries</h1>
+            <div class="line"></div>
+            <div class="intro_con">
+
+                <div class="dropdown">
+                    <button class="dropbtn" id="dropbtn">&nbsp;Coal&nbsp;</button>
+                    <div class="dropdown-content">
+                        <a href="charts/page2/coal.html" target="mainFrame" onclick="change('Coal')">Coal</a>
+                        <a href="charts/page2/oil.html" target="mainFrame" onclick="change('Oil')">Oil</a>
+                        <a href="charts/page2/NaturalGas.html" target="mainFrame"onclick="change('Natural Gas')">Natural Gas</a>
+                        <a href="charts/page2/energy.html" target="mainFrame" onclick="change('Nuclear Energy')">Nuclear Energy</a>
+                        <a href="charts/page2/hydro.html" target="mainFrame" onclick="change('Hydroelectricity')">Hydroelectricity</a>
+                    </div>
+                </div>
+                <div class="circle">
+                    <iframe id="mainFrame" class="incir" name="mainFrame" style="border: 0px;" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"src="charts/page2/coal.html">
+                    </iframe>
+                </div>
+                <div class="clear"></div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </section>
+
+</div>
+<div class="foot">
+    <div class="infoot">
+        <p>DATS6401 Visualization of Complex Data Final Project by Danlei Qian@2019</p>
+    </div>
+</div>
+</body>
+<script>
+    function change(e){
+        console.log(e)
+        document.getElementById("dropbtn").innerHTML=e;
+    }
+    /*window.onload = function(){
+        var oTop = document.getElementById("to_top");
+        var screenw = document.documentElement.clientWidth || document.body.clientWidth;
+        var screenh = document.documentElement.clientHeight || document.body.clientHeight;
+        oTop.style.left = screenw - oTop.offsetWidth +"px";
+        oTop.style.top = screenh - oTop.offsetHeight + "px";
+        window.onscroll = function(){
+            var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+            oTop.style.top = screenh - oTop.offsetHeight + scrolltop +"px";
+        }
+        oTop.onclick = function(){
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+    }*/
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/imgs.js"></script>
+<script src="js/color_ranges.js"></script>
+<script src="js/visual.js"></script>
+<link rel="stylesheet" href="/css/stylesheet.css">
+
+</html>

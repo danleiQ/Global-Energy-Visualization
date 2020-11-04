@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        //load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+ 
+
+        google.charts.setOnLoadCallback(drawPieChart3);
+
+        function drawPieChart3() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Canada',  18.63], ['China',  0.95],
+                ['Germany',  2.66], ['Japan',  1.57],
+                ['Russia',  0],['Saudi Arabia',  0.52]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Canada',  94.37], ['China',  167.4],
+                ['Germany',  66.17], ['Japan',  102.08],
+                ['Russia',  351.4],['Saudi Arabia',  85.32]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Gas Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_gas'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+
+
+    </script>
+</head>
+<body>
+<td><div id="piechart_gas" style="width: 500px;height: 300px;border: 1px"></div></td>
+</body>

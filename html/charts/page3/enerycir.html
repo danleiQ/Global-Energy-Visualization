@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        //load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+ 
+
+        google.charts.setOnLoadCallback(drawPieChart4);
+
+        function drawPieChart4() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Canada',  0.03], ['China',  0.00],
+                ['Germany',  0.03], ['France',  0.24],
+                ['Russia',  0.00],['Ukraine',  0.00]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Canada',  22.88], ['China',  38.65],
+                ['Germany',  20.77], ['France',  98.98],
+                ['Russia',  44.23],['Ukraine',  19.83]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Nulcear Energy Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_nuclear'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+
+
+    </script>
+</head>
+<body>
+<td><div id="piechart_nuclear" style="width: 500px;height: 300px;border: 1px"></div></td>
+</body>
+</html>

@@ -1,0 +1,261 @@
+记录数,date,name,type,value
+1,1965,Coal,Coal,1070.66
+1,1966,Coal,Coal,1075.36
+1,1967,Coal,Coal,1048.27
+1,1968,Coal,Coal,1070.84
+1,1969,Coal,Coal,1107.89
+1,1970,Coal,Coal,1130.47
+1,1971,Coal,Coal,1112.63
+1,1972,Coal,Coal,1119.96
+1,1973,Coal,Coal,1159.9
+1,1974,Coal,Coal,1157.04
+1,1975,Coal,Coal,1175.71
+1,1976,Coal,Coal,1230.06
+1,1977,Coal,Coal,1271.06
+1,1978,Coal,Coal,1289.59
+1,1979,Coal,Coal,1359.92
+1,1980,Coal,Coal,1410.37
+1,1981,Coal,Coal,1434.73
+1,1982,Coal,Coal,1443.57
+1,1983,Coal,Coal,1494.03
+1,1984,Coal,Coal,1573.39
+1,1985,Coal,Coal,1772.34
+1,1986,Coal,Coal,1786.96
+1,1987,Coal,Coal,1866.87
+1,1988,Coal,Coal,1931.71
+1,1989,Coal,Coal,1962.03
+1,1990,Coal,Coal,1951.73
+1,1991,Coal,Coal,1946.92
+1,1992,Coal,Coal,1955.29
+1,1993,Coal,Coal,1980.46
+1,1994,Coal,Coal,2016.92
+1,1995,Coal,Coal,2032.71
+1,1996,Coal,Coal,2089.17
+1,1997,Coal,Coal,2096.54
+1,1998,Coal,Coal,2083.86
+1,1999,Coal,Coal,2089.69
+1,2000,Coal,Coal,2155.09
+1,2001,Coal,Coal,2188.72
+1,2002,Coal,Coal,2276.29
+1,2003,Coal,Coal,2486.21
+1,2004,Coal,Coal,2673.86
+1,2005,Coal,Coal,2883.09
+1,2006,Coal,Coal,3037.79
+1,2007,Coal,Coal,3224.11
+1,2008,Coal,Coal,3263.38
+1,2009,Coal,Coal,3224.7
+1,2010,Coal,Coal,3372.58
+1,2011,Coal,Coal,3526.12
+1,2012,Coal,Coal,3542.99
+1,2013,Coal,Coal,3618.21
+1,2014,Coal,Coal,3610.17
+1,2015,Coal,Coal,3502.53
+1,2016,Coal,Coal,3459.95
+1,1965,Oil,Oil,1274.91
+1,1966,Oil,Oil,1374.96
+1,1967,Oil,Oil,1469.93
+1,1968,Oil,Oil,1600.7
+1,1969,Oil,Oil,1743.77
+1,1970,Oil,Oil,1890.74
+1,1971,Oil,Oil,1989.31
+1,1972,Oil,Oil,2138.25
+1,1973,Oil,Oil,2303.97
+1,1974,Oil,Oil,2229.77
+1,1975,Oil,Oil,2173.85
+1,1976,Oil,Oil,2322.7
+1,1977,Oil,Oil,2389.42
+1,1978,Oil,Oil,2434.86
+1,1979,Oil,Oil,2461.02
+1,1980,Oil,Oil,2311.41
+1,1981,Oil,Oil,2194.85
+1,1982,Oil,Oil,2104.62
+1,1983,Oil,Oil,2082.06
+1,1984,Oil,Oil,2141.45
+1,1985,Oil,Oil,2272.37
+1,1986,Oil,Oil,2355.09
+1,1987,Oil,Oil,2401.2
+1,1988,Oil,Oil,2485.93
+1,1989,Oil,Oil,2516.28
+1,1990,Oil,Oil,2538.72
+1,1991,Oil,Oil,2543.73
+1,1992,Oil,Oil,2587.51
+1,1993,Oil,Oil,2587.06
+1,1994,Oil,Oil,2661.37
+1,1995,Oil,Oil,2708.5
+1,1996,Oil,Oil,2793.82
+1,1997,Oil,Oil,2853.17
+1,1998,Oil,Oil,2896.34
+1,1999,Oil,Oil,2945.03
+1,2000,Oil,Oil,2974.29
+1,2001,Oil,Oil,2988.32
+1,2002,Oil,Oil,3016.64
+1,2003,Oil,Oil,3092.96
+1,2004,Oil,Oil,3220.11
+1,2005,Oil,Oil,3252.58
+1,2006,Oil,Oil,3284.72
+1,2007,Oil,Oil,3329.17
+1,2008,Oil,Oil,3303.07
+1,2009,Oil,Oil,3229.88
+1,2010,Oil,Oil,3348.08
+1,2011,Oil,Oil,3382.08
+1,2012,Oil,Oil,3416
+1,2013,Oil,Oil,3446.31
+1,2014,Oil,Oil,3478.53
+1,2015,Oil,Oil,3569.06
+1,2016,Oil,Oil,3626.48
+1,1965,Natural gas,Natural gas,70.48
+1,1966,Natural gas,Natural gas,78.36
+1,1967,Natural gas,Natural gas,87.36
+1,1968,Natural gas,Natural gas,104.84
+1,1969,Natural gas,Natural gas,129.22
+1,1970,Natural gas,Natural gas,154.36
+1,1971,Natural gas,Natural gas,180.79
+1,1972,Natural gas,Natural gas,213.95
+1,1973,Natural gas,Natural gas,241.65
+1,1974,Natural gas,Natural gas,268.94
+1,1975,Natural gas,Natural gas,290.12
+1,1976,Natural gas,Natural gas,313.42
+1,1977,Natural gas,Natural gas,336.54
+1,1978,Natural gas,Natural gas,361.93
+1,1979,Natural gas,Natural gas,393.5
+1,1980,Natural gas,Natural gas,403.3
+1,1981,Natural gas,Natural gas,407.49
+1,1982,Natural gas,Natural gas,413.4
+1,1983,Natural gas,Natural gas,430.24
+1,1984,Natural gas,Natural gas,465.85
+1,1985,Natural gas,Natural gas,931.65
+1,1986,Natural gas,Natural gas,966.02
+1,1987,Natural gas,Natural gas,1010.7
+1,1988,Natural gas,Natural gas,1055.23
+1,1989,Natural gas,Natural gas,1090.39
+1,1990,Natural gas,Natural gas,1134.05
+1,1991,Natural gas,Natural gas,1163.99
+1,1992,Natural gas,Natural gas,1142.72
+1,1993,Natural gas,Natural gas,1166.61
+1,1994,Natural gas,Natural gas,1154.06
+1,1995,Natural gas,Natural gas,1181.25
+1,1996,Natural gas,Natural gas,1248.78
+1,1997,Natural gas,Natural gas,1223.38
+1,1998,Natural gas,Natural gas,1257.6
+1,1999,Natural gas,Natural gas,1305.24
+1,2000,Natural gas,Natural gas,1351.25
+1,2001,Natural gas,Natural gas,1384.91
+1,2002,Natural gas,Natural gas,1414.03
+1,2003,Natural gas,Natural gas,1484.08
+1,2004,Natural gas,Natural gas,1540.84
+1,2005,Natural gas,Natural gas,1603.64
+1,2006,Natural gas,Natural gas,1651.52
+1,2007,Natural gas,Natural gas,1695.98
+1,2008,Natural gas,Natural gas,1742.97
+1,2009,Natural gas,Natural gas,1695.85
+1,2010,Natural gas,Natural gas,1832.04
+1,2011,Natural gas,Natural gas,1871.63
+1,2012,Natural gas,Natural gas,1910.99
+1,2013,Natural gas,Natural gas,1937.67
+1,2014,Natural gas,Natural gas,1929.76
+1,2015,Natural gas,Natural gas,1956.6
+1,2016,Natural gas,Natural gas,2006.47
+1,1965,Hydroelectricity,Hydroelectricity,133.59
+1,1966,Hydroelectricity,Hydroelectricity,144.95
+1,1967,Hydroelectricity,Hydroelectricity,144.34
+1,1968,Hydroelectricity,Hydroelectricity,150.29
+1,1969,Hydroelectricity,Hydroelectricity,154.82
+1,1970,Hydroelectricity,Hydroelectricity,163.39
+1,1971,Hydroelectricity,Hydroelectricity,169
+1,1972,Hydroelectricity,Hydroelectricity,179
+1,1973,Hydroelectricity,Hydroelectricity,183.09
+1,1974,Hydroelectricity,Hydroelectricity,199.49
+1,1975,Hydroelectricity,Hydroelectricity,205.3
+1,1976,Hydroelectricity,Hydroelectricity,203.94
+1,1977,Hydroelectricity,Hydroelectricity,221.88
+1,1978,Hydroelectricity,Hydroelectricity,229.84
+1,1979,Hydroelectricity,Hydroelectricity,242.82
+1,1980,Hydroelectricity,Hydroelectricity,249.3
+1,1981,Hydroelectricity,Hydroelectricity,257.46
+1,1982,Hydroelectricity,Hydroelectricity,265.35
+1,1983,Hydroelectricity,Hydroelectricity,277.4
+1,1984,Hydroelectricity,Hydroelectricity,287.11
+1,1985,Hydroelectricity,Hydroelectricity,341.49
+1,1986,Hydroelectricity,Hydroelectricity,341.32
+1,1987,Hydroelectricity,Hydroelectricity,353.93
+1,1988,Hydroelectricity,Hydroelectricity,371.13
+1,1989,Hydroelectricity,Hydroelectricity,357.6
+1,1990,Hydroelectricity,Hydroelectricity,369.4
+1,1991,Hydroelectricity,Hydroelectricity,379.83
+1,1992,Hydroelectricity,Hydroelectricity,386.98
+1,1993,Hydroelectricity,Hydroelectricity,409.14
+1,1994,Hydroelectricity,Hydroelectricity,415.06
+1,1995,Hydroelectricity,Hydroelectricity,431.07
+1,1996,Hydroelectricity,Hydroelectricity,427.61
+1,1997,Hydroelectricity,Hydroelectricity,435.99
+1,1998,Hydroelectricity,Hydroelectricity,445.78
+1,1999,Hydroelectricity,Hydroelectricity,448.4
+1,2000,Hydroelectricity,Hydroelectricity,467.35
+1,2001,Hydroelectricity,Hydroelectricity,467.56
+1,2002,Hydroelectricity,Hydroelectricity,464.87
+1,2003,Hydroelectricity,Hydroelectricity,459.08
+1,2004,Hydroelectricity,Hydroelectricity,495.83
+1,2005,Hydroelectricity,Hydroelectricity,516.37
+1,2006,Hydroelectricity,Hydroelectricity,534.78
+1,2007,Hydroelectricity,Hydroelectricity,554.47
+1,2008,Hydroelectricity,Hydroelectricity,593.94
+1,2009,Hydroelectricity,Hydroelectricity,587.86
+1,2010,Hydroelectricity,Hydroelectricity,626.34
+1,2011,Hydroelectricity,Hydroelectricity,626.61
+1,2012,Hydroelectricity,Hydroelectricity,671.82
+1,2013,Hydroelectricity,Hydroelectricity,696.32
+1,2014,Hydroelectricity,Hydroelectricity,721.98
+1,2015,Hydroelectricity,Hydroelectricity,728.2
+1,2016,Hydroelectricity,Hydroelectricity,752.03
+1,1965,Nuclear,Nuclear,4.54
+1,1966,Nuclear,Nuclear,6.04
+1,1967,Nuclear,Nuclear,7.25
+1,1968,Nuclear,Nuclear,8.19
+1,1969,Nuclear,Nuclear,10.2
+1,1970,Nuclear,Nuclear,11.54
+1,1971,Nuclear,Nuclear,14.59
+1,1972,Nuclear,Nuclear,19.02
+1,1973,Nuclear,Nuclear,22.67
+1,1974,Nuclear,Nuclear,27.48
+1,1975,Nuclear,Nuclear,34.84
+1,1976,Nuclear,Nuclear,43.81
+1,1977,Nuclear,Nuclear,49.78
+1,1978,Nuclear,Nuclear,61.3
+1,1979,Nuclear,Nuclear,67.84
+1,1980,Nuclear,Nuclear,80.76
+1,1981,Nuclear,Nuclear,100.2
+1,1982,Nuclear,Nuclear,111.67
+1,1983,Nuclear,Nuclear,129.19
+1,1984,Nuclear,Nuclear,160.11
+1,1985,Nuclear,Nuclear,231.01
+1,1986,Nuclear,Nuclear,245.56
+1,1987,Nuclear,Nuclear,263.11
+1,1988,Nuclear,Nuclear,281.81
+1,1989,Nuclear,Nuclear,292.82
+1,1990,Nuclear,Nuclear,293.13
+1,1991,Nuclear,Nuclear,305.04
+1,1992,Nuclear,Nuclear,307.59
+1,1993,Nuclear,Nuclear,325.49
+1,1994,Nuclear,Nuclear,327.11
+1,1995,Nuclear,Nuclear,339.3
+1,1996,Nuclear,Nuclear,355.55
+1,1997,Nuclear,Nuclear,362.61
+1,1998,Nuclear,Nuclear,358.13
+1,1999,Nuclear,Nuclear,362.29
+1,2000,Nuclear,Nuclear,366.88
+1,2001,Nuclear,Nuclear,379.64
+1,2002,Nuclear,Nuclear,383.8
+1,2003,Nuclear,Nuclear,373.18
+1,2004,Nuclear,Nuclear,393.19
+1,2005,Nuclear,Nuclear,393.43
+1,2006,Nuclear,Nuclear,399.52
+1,2007,Nuclear,Nuclear,383.81
+1,2008,Nuclear,Nuclear,379.75
+1,2009,Nuclear,Nuclear,373.9
+1,2010,Nuclear,Nuclear,387.11
+1,2011,Nuclear,Nuclear,363.19
+1,2012,Nuclear,Nuclear,328.69
+1,2013,Nuclear,Nuclear,329.98
+1,2014,Nuclear,Nuclear,335.05
+1,2015,Nuclear,Nuclear,342.51
+1,2016,Nuclear,Nuclear,350.67

@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+	<title>Energy Production</title>
+	<!-- load the Google API -->
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		//load the Visualization API and the corechart package
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.load('current', {'packages':['bar']});
+		google.charts.setOnLoadCallback(drawAllSheets);
+		//google.charts.setOnLoadCallback(drawChart1);
+
+		function drawAllSheets() {
+			drawSheetName('Total_production', 'SELECT A,B,C,D,E,F',
+						  TotalproductionResponseHandler);
+			drawSheetName('Total_production_everyfiveyear', 'SELECT A,B,C,D,E,F',
+						  TotalproductionfiveyearResponseHandler);
+			drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+						  CoalContinentResponseHandler);
+			drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+						  OilContinentResponseHandler);
+			drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+						  GasContinentResponseHandler);
+			drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+						  NuclearContinentResponseHandler);
+			drawSheetName('Coal_Continent', 'SELECT A,B,C,D,E,F,G',
+						  HydroContinentResponseHandler);
+		} //drawAllSheets
+		
+		function drawSheetName(sheetName, query, responseHandler) {
+			var queryString = encodeURIComponent(query);
+			var query = new google.visualization.Query(
+				'https://docs.google.com/spreadsheets/d/1Ywv8f5Mmz0gGvLe5_Lio5MJC__19Ny3-ZdYliWOXXeg/gviz/tq?sheet=' + sheetName + '&headers=1&tq=' +queryString  
+			);
+			
+			query.send(responseHandler);
+		} 
+		function TotalproductionResponseHandler(response) {
+
+	    var data = response.getDataTable();
+        var options = {
+
+          title: 'Total Energy Production over 1965-2016',	
+          chartArea:{left:200,width:'100%',right:200},
+          //curveType: 'function',
+          legend: { position: 'right' }};
+
+      var chart = new google.visualization.LineChart(document.getElementById('Totalproduction_div'));
+      chart.draw(data, options);
+
+     }//draw line charts
+	
+
+
+		function TotalproductionfiveyearResponseHandler(response) {
+	      var data = response.getDataTable();
+
+	      var options = {
+	        width: 600,
+	        height: 600,
+	        legend: { position: 'top', maxLines: 3 },
+	        bar: { groupWidth: '75%' },
+	        isStacked: true,
+	        colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+	        vAxis: {title: 'Country'},
+			hAxis: {title: 'Percent of Health Care Spending Per GDP Per Person($ in Billions)'}
+	      };
+	      var chart = new google.charts.Bar(document.getElementById('Productionfiveyear_div'));
+	      chart.draw(data, google.charts.Bar.convertOptions(options));
+	}//draw stacked bar charts
+
+		
+
+	</script>
+	<div id="Totalproduction_div" style="width: 1200px; height: 500px"></div>
+
+</head>
+
+<body>
+
+
+</body>
+</html>

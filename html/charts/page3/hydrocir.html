@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        //load the Visualization API and the corechart package
+        google.charts.load('current', {'packages':['corechart']});
+ 
+
+        google.charts.setOnLoadCallback(drawPieChart5);
+
+        function drawPieChart5() {
+            var olddata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Brazil',  5.43], ['Canada',  26.5],
+                ['China',  5], ['India',  4.34],
+                ['Norway',  11.17],['Russia',  0]]);
+            var newdata = google.visualization.arrayToDataTable([
+                ['Country Name', 'Coal Consumption'],
+                ['Brazil',  81.4], ['Canada',  86.48],
+                ['China',  252.19], ['India',  30.16],
+                ['Norway',  31.07],['Russia',  38.01]]);
+
+            var options = { pieSliceText: 'none',
+                title: 'Five Countries with Top Hydroelectricity Consumption 1965 vs 2015(million)'};
+
+
+            var chartDiff = new google.visualization.PieChart(document.getElementById('piechart_hydro'));
+
+            var diffData = chartDiff.computeDiff(olddata, newdata);
+            chartDiff.draw(diffData, options);//draw piec harts-coal consumption
+
+        }
+
+
+    </script>
+</head>
+<body>
+<td><div id="piechart_hydro" style="width: 500px;height: 300px;border: 1px"></div></td>
+</body>
+</html>
