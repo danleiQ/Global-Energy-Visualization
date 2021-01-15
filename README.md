@@ -7,5 +7,5 @@ https://www.gapminder.org/data/
 
 https://www.bp.com/en/global/corporate/energy-economics/statistical-review-of-world-energy.html
 
-And here is the  publishing link to github.io:
+## And here is the publishing web:
 https://danleiq.github.io/Global-Energy-Visualization/html/index.html
